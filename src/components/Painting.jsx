@@ -1,4 +1,4 @@
-import PropTypes, { string } from 'prop-types';
+import PropTypes from 'prop-types';
 import defaultImage from '../default.jpg';
 
 export default function Painting({
@@ -13,23 +13,23 @@ export default function Painting({
 
   return (
     <div>
-      <img src={imageUrl} alt={title} width="280" />
+      <img src={imageUrl ?? defaultImage} alt={title} width="480" />
       <h2>{title}</h2>
       <p>
         Author: <a href={authorUrl}>{author}</a>
       </p>
       <p>Price: {price} credits</p>
-      <p>Available: {quantity}</p>
+      <p>Available: {quantity < 10 ? 'Low stock' : '✅'}</p>
       <button type="button">Add to cart</button>
     </div>
   );
 }
 
-Painting.PropTypes = {
-  imageUrl: PropTypes.string,
-  title: PropTypes.string,
-  price: PropTypes.number,
-  author: PropTypes.string,
-  authorUrl: PropTypes.string,
-  quantity: PropTypes.number,
+Painting.propTypes = {
+  imageUrl: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  price: PropTypes.number.isRequired,
+  author: PropTypes.string.isRequired,
+  authorUrl: PropTypes.string.isRequired,
+  quantity: PropTypes.number.isRequired,
 };
