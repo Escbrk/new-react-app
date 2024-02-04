@@ -3,7 +3,7 @@
 // import paintings from '../paintings.json';
 import { PageTitle } from './PageTitle/PageTitle';
 import { EventBoard } from './EventBoard/EventBoard';
-import upcomingEvents from '../upcoming-events.json'
+import upcomingEvents from '../upcoming-events.json';
 
 // export default function App() {
 //   return (
@@ -17,9 +17,9 @@ import upcomingEvents from '../upcoming-events.json'
 
 export const App = () => {
   return (
-    <div>
+    <>
       <PageTitle text="24th Core Worlds Coalition Confetence" />
       <EventBoard events={upcomingEvents} />
-    </div>
+    </>
   );
 };
