@@ -9,33 +9,33 @@ import {
 // import { formatEventDuration } from 'utils/formatEventDuration';
 import { formatEventStart, formatEventDuration } from 'utils';
 import { iconSize } from 'constants/index';
-import css from './EventCard.module.css';
+import { Card, EventName, Info, Chip } from './EventCard.styled';
 
 export const EventCard = ({ name, location, speaker, type, start, end }) => {
   const formattedStart = formatEventStart(start);
   const duration = formatEventDuration(start, end);
 
   return (
-    <div className={css.event}>
-      <h2 className={css.title}>{name}</h2>
-      <p className={css.info}>
-        <FaMapMarkerAlt className={css.icon} size={iconSize.sm} />
+    <Card>
+      <EventName>{name}</EventName>
+      <Info>
+        <FaMapMarkerAlt />
         {location}
-      </p>
-      <p className={css.info}>
-        <FaUserAlt className={css.icon} size={iconSize.sm} />
+      </Info>
+      <Info>
+        <FaUserAlt />
         {speaker}
-      </p>
-      <p className={css.info}>
-        <FaCalendarAlt className={css.icon} size={iconSize.sm} />
+      </Info>
+      <Info>
+        <FaCalendarAlt />
         {formattedStart}
-      </p>
-      <p className={css.info}>
-        <FaClock className={css.icon} size={iconSize.sm} />
+      </Info>
+      <Info>
+        <FaClock />
         {duration}
-      </p>
-      <span className={`${css.chip} ${css[type]}`}>{type}</span>
-    </div>
+      </Info>
+      <Chip eventType={type}>{type}</Chip>
+    </Card>
   );
 };
 
