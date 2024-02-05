@@ -1,34 +1,4 @@
 import styled from '@emotion/styled';
-import { type } from '@testing-library/user-event/dist/type';
-
-// .icon {
-//   display: block;
-//   margin-right: 8px;
-//   color: var(--color-secondary-text);
-// }
-
-// .chip {
-//   position: absolute;
-//   top: 4px;
-//   right: 4px;
-//   padding: 4px 8px;
-//   border-radius: 4px;
-//   text-transform: uppercase;
-//   background-color: #000;
-//   color: #fff;
-// }
-
-// .free {
-//   background-color: var(--color-green);
-// }
-
-// .paid {
-//   background-color: var(--color-blue);
-// }
-
-// .vip {
-//   background-color: var(--color-red);
-// }
 
 export const Card = styled.div`
   position: relative;
@@ -57,7 +27,26 @@ export const Info = styled.p`
   line-height: 24px;
   font-weight: 400;
   letter-spacing: 0.25px;
+
+  svg {
+    display: block;
+    margin-right: 8px;
+    color: var(--color-secondary-text);
+  }
 `;
+
+const setBgColor = props => {
+  switch (props.eventType) {
+    case 'free':
+      return 'var(--color-green)';
+    case 'paid':
+      return 'var(--color-blue)';
+    case 'vip':
+      return 'var(--color-red)';
+    default:
+      return '#000';
+  }
+};
 
 export const Chip = styled.span`
   position: absolute;
@@ -67,17 +56,5 @@ export const Chip = styled.span`
   border-radius: 4px;
   text-transform: uppercase;
   color: #fff;
-
-  background-color: ${props => {
-    switch (props.eventType) {
-      case 'free':
-        return 'var(--color-green)';
-      case 'paid':
-        return 'var(--color-blue)';
-      case 'vip':
-        return 'var(--color-red)';
-      default:
-        return '#000';
-    }
-  }};
+  background-color: ${setBgColor};
 `;
