@@ -19,19 +19,19 @@ export const EventCard = ({ name, location, speaker, type, start, end }) => {
     <Card>
       <EventName>{name}</EventName>
       <Info>
-        <FaMapMarkerAlt />
+        <FaMapMarkerAlt size={iconSize.sm} />
         {location}
       </Info>
       <Info>
-        <FaUserAlt />
+        <FaUserAlt size={iconSize.sm} />
         {speaker}
       </Info>
       <Info>
-        <FaCalendarAlt />
+        <FaCalendarAlt size={iconSize.sm} />
         {formattedStart}
       </Info>
       <Info>
-        <FaClock />
+        <FaClock size={iconSize.sm} />
         {duration}
       </Info>
       <Chip eventType={type}>{type}</Chip>
