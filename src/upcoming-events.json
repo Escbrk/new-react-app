@@ -48,5 +48,35 @@
       "start": "2025-03-07T15:00:00",
       "end": "2025-03-07T17:30:00"
     }
+  },
+  {
+    "name": "Beyond the Core Worlds",
+    "location": "Magec, Achaman",
+    "speaker": "Appolo Pillai",
+    "type": "vip",
+    "time": {
+      "start": "2025-05-21T12:00:00",
+      "end": "2025-05-21T14:00:00"
+    }
+  },
+  {
+    "name": "Mining for Profir",
+    "location": "Yma, Qaras",
+    "speaker": "Archibald Yurzi",
+    "type": "paid",
+    "time": {
+      "start": "2025-08-26T19:00:00",
+      "end": "2025-08-26T19:45:00"
+    }
+  },
+  {
+    "name": "Deep Space Horrors",
+    "location": "Luke Xamarin",
+    "speaker": "Solomon Fokes",
+    "type": "free",
+    "time": {
+      "start": "2025-11-02T18:30:00",
+      "end": "2025-11-02T20:30:00"
+    }
   }
 ]
